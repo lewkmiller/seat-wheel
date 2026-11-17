@@ -1,0 +1,6 @@
+node_modules/
+dist/
+release/
+# Backup files contain student names. Never commit them.
+*backup*.json
+.DS_Store

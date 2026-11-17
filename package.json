@@ -1,0 +1,70 @@
+{
+  "name": "seat-wheel",
+  "productName": "Seat Wheel",
+  "version": "2.0.0",
+  "description": "Spin-the-wheel random seat assignments for teachers",
+  "author": "Seat Wheel",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac"
+  },
+  "build": {
+    "publish": null,
+    "appId": "app.seatwheel.classroom",
+    "productName": "Seat Wheel",
+    "files": [
+      "main.js",
+      "app/**/*",
+      "build/icon.png"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "shortcutName": "Seat Wheel"
+    },
+    "portable": {
+      "artifactName": "Seat-Wheel-Portable.exe"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "category": "public.app-category.education",
+      "icon": "build/icon.png",
+      "identity": null
+    }
+  },
+  "devDependencies": {
+    "electron": "^38.8.6",
+    "electron-builder": "^26.18.0"
+  }
+}
